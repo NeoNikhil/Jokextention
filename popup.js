@@ -1,10 +1,10 @@
 const getjokes = async () => {
     try{
-        const res = await fetch("https://api.chucknorris.io/jokes/random");
+        const res = await fetch("https://icanhazdadjoke.com/slack");
         const data = await res.json();
         const myjoke = document.querySelector("#myjoke");
 
-        myjoke.innerHTML = data.value;
+        myjoke.innerHTML = data.attachments[0].text;
     }catch(error){}
 
 };
